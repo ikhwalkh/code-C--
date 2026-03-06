@@ -54,4 +54,31 @@ void BubbleSort()
     cout << "\n===================" << endl;
     cout << "Hasil Setiap Pass" << endl;
     cout << "=================" << endl;
+    for (int pass = 1; pass < n; pass++)
+    {
+        for (int j = 0; j <= n - 1 - pass; j++)
+        {
+            if (a[j] > a[j + 1])
+            {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+        cout << "pass ke -" << pass << ":\t";
+        for (int k = 0; k < n; k++)
+        {
+            cout << a[k] << "\t";
+        }
+        cout << endl;
+    }
+}
+
+
+int main()
+{
+    input();
+    BubbleSort();
+    display();
+    return 0;
 }
